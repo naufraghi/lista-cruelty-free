@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+
+<body>
+    <div data-role="page">
+    <div data-role="content">
+        <div id="output">
+            <ul data-role="listview" data-inset="true" data-filter="true">
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //simulating the JSON coming from the server
+    var json = '[\
+                 {"marchio": "Pulitino",    "anno": "1111"}, \
+                 {"marchio": "Bagno Bello", "anno": "2222"}, \
+                 {"marchio": "Doccia Più",  "anno": "3333"} \
+                ]';
+    //jQuery getJSON will do this step
+    var data = $.parseJSON(json);
+
+    //and this is your code
+    $.each(data, function(index, value) {
+        $('#output').children('ul').append('<li>'+value.marchio+'</li>');
+    });
+</script>
+
+</body>
+</html>
