@@ -21,11 +21,10 @@
 </div>
 
 <script type="text/javascript">
-    var data = $.getJSON("../lista.json");
-
-    //and this is your code
-    $.each(data, function(index, value) {
-        $('#output').children('ul').append('<li>'+value.marchio+'</li>');
+    var data = $.getJSON("../lista.json", function(data) {
+        $.each(data, function(key, value) {
+            $('#output').children('ul').append('<li>'+value.marchio+'</li>');
+        });
     });
 </script>
 
