@@ -21,14 +21,7 @@
 </div>
 
 <script type="text/javascript">
-    //simulating the JSON coming from the server
-    var json = '[\
-                 {"marchio": "Pulitino",    "anno": "1111"}, \
-                 {"marchio": "Bagno Bello", "anno": "2222"}, \
-                 {"marchio": "Doccia Più",  "anno": "3333"} \
-                ]';
-    //jQuery getJSON will do this step
-    var data = $.parseJSON(json);
+    var data = $.getJSON("../lista.json");
 
     //and this is your code
     $.each(data, function(index, value) {
