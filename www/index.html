@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div data-role="page">
+    <div data-role="page" id="lista-cruelty-free">
     <div data-role="content">
         <div id="lista-marchi" class="content-primary">
             <ul data-role="listview" data-inset="true" data-filter="true" data-filter-theme="d" data-theme="d" data-divider-theme="d">
@@ -21,12 +21,13 @@
 </div>
 
 <script type="text/javascript">
-    var data = $.getJSON("../lista.json", function(data) {
-        $.each(data, function(key, value) {
-            $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
+    $(document).delegate("#lista-cruelty-free", "pagebeforecreate", function() {
+        var data = $.getJSON("../lista.json", function(data) {
+            $.each(data, function(key, value) {
+                $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
+            });
         });
     });
-    $('#lista-marchi').listview('refresh');
 </script>
 
 </body>
