@@ -12,8 +12,8 @@
 <body>
     <div data-role="page">
     <div data-role="content">
-        <div id="output">
-            <ul data-role="listview" data-inset="true" data-filter="true">
+        <div id="lista-marchi" class="content-primary">
+            <ul data-role="listview" data-inset="true" data-filter="true" data-filter-theme="d" data-theme="d" data-divider-theme="d">
 
             </ul>
         </div>
@@ -23,9 +23,10 @@
 <script type="text/javascript">
     var data = $.getJSON("../lista.json", function(data) {
         $.each(data, function(key, value) {
-            $('#output').children('ul').append('<li>'+value.marchio+'</li>');
+            $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
         });
     });
+    $('#lista-marchi').listview('refresh');
 </script>
 
 </body>
