@@ -21,13 +21,12 @@
 </div>
 
 <script type="text/javascript">
-    $(document).delegate("#lista-cruelty-free", "pagebeforecreate", function() {
-        var data = $.getJSON("../lista.json", function(data) {
-            $.each(data, function(key, value) {
-                $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
-            });
+    var data = $.getJSON("../lista.json", function(data) {
+        $.each(data, function(key, value) {
+            $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
         });
     });
+    $('#lista-marchi').children('ul').listview('refresh');
 </script>
 
 </body>
