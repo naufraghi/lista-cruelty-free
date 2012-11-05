@@ -1,1 +1,5 @@
-{'prova': 'Prova prova'}
+[
+    {"marchio": "Pulitino",    "anno": "1111"},
+    {"marchio": "Bagno Bello", "anno": "2222"},
+    {"marchio": "Doccia Più",  "anno": "3333"}
+]
