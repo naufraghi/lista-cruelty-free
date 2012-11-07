@@ -25,8 +25,8 @@
         $.each(data, function(key, value) {
             $('#lista-marchi').children('ul').append('<li>'+value.marchio+'</li>');
         });
+        $('#lista-marchi').children('ul').listview('refresh');
     });
-    $('#lista-marchi').children('ul').listview('refresh');
 </script>
 
 </body>
